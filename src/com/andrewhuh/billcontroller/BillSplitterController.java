@@ -25,7 +25,7 @@ public class BillSplitterController {
 	public ModelAndView submitAdmissionForm(
 			@RequestParam("studentName") String name, @RequestParam("studentHobby") String hobby){
 		
-		ModelAndView model = new ModelAndView("AdmissionSuccess");
+		ModelAndView model = new ModelAndView("BillResults");
 		model.addObject("msg", "Details subitted by you:: Name: " + name + ", Hobby: " + hobby);
 		
 		return model;

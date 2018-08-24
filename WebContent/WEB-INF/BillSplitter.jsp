@@ -39,6 +39,7 @@
 		<p>
 			Tip: <input type="text" name="studentHobby" />
 		</p>
+		<input type="submit" value="Submit Form"/>
 		
 	
 	</form>
