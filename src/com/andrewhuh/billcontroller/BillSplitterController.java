@@ -19,7 +19,7 @@ public class BillSplitterController {
 		
 		ModelAndView model = new ModelAndView("BillSplitter");
 		
-//		model.addObject("msg", "my name is cooler");
+
 		
 		return model;
 	}
@@ -38,42 +38,60 @@ public class BillSplitterController {
 		System.out.println(tax);
 		System.out.println(deliveryfee);
 		System.out.println(tip);
-		Integer[] arrayofpeople = new Integer[4];
-		arrayofpeople[1] = Integer.parseInt(person1);
-		arrayofpeople[2] = Integer.parseInt(person2);
-		arrayofpeople[3] = Integer.parseInt(person3);
-		arrayofpeople[4] = Integer.parseInt(person4);
+		Float[] arrayofpeople = new Float[4];
+		arrayofpeople[0] = Float.valueOf(person1);
+		arrayofpeople[1] = Float.valueOf(person2);
+		arrayofpeople[2] = Float.valueOf(person3);
+		arrayofpeople[3] = Float.valueOf(person4);
+		int taxvalue = Integer.parseInt(tax);
+		int deliveryfeevalue = Integer.parseInt(deliveryfee);
+		int tipvalue = Integer.parseInt(tip);
 		
 		int numberofpeople = 4;
-		int totalvalueofbill = 0;
+		float totalvalueofbill = 0;
+		Float[] percentforpeople = new Float[4];
+		Float[] finalamountforeachperson = new Float[4];
 //		This for loop is used to get the number 
 //		of people using the application and the 
 //		total value of the bill excluding tip, tax, and delivery fee
+//		Also adds the what each person owes
+		System.out.println(finalamountforeachperson);
+		System.out.println(arrayofpeople);
 		for (int i=0; i < 4; i++) {
-			if (arrayofpeople[i] == null) {
+			if (arrayofpeople[i] == 0) {
 				numberofpeople -= 1;
+			} else {
 				totalvalueofbill += arrayofpeople[i];
+				finalamountforeachperson[i] = (float) 0;
+				finalamountforeachperson[i] += arrayofpeople[i];
 			}
 		}
+//		got the percent of the bill that each person owes
+		for (int i=0; i < 4; i++) {
+			float percentforone = arrayofpeople[i] / totalvalueofbill;
+			percentforpeople[i] = percentforone;
+		}
+		System.out.println("here");
+//		deals with tax, delivery fee, tip
+		for (int i=0; i < 4; i++) {
+			finalamountforeachperson[i] += taxvalue * percentforpeople[i];
+			finalamountforeachperson[i] += tipvalue * percentforpeople[i];
+			finalamountforeachperson[i] += deliveryfeevalue * percentforpeople[i];
+		}
 		
-		
-		
-		
-		
-		
-		int total;
-		
+		System.out.println("here2");
 		ModelAndView model = new ModelAndView("BillResults");
+//		just for a label
+		String[] labelarray = new String[4];
+		labelarray[0] = "person1";
+		labelarray[1] = "person2";
+		labelarray[2] = "person3";
+		labelarray[3] = "person4";
 		
-		
-		
-		
-		
-		model.addObject("person1", "my name is cooler");
-		model.addObject("person2", "my name is coolerrr");
-		model.addObject("person3", "my name is coolerrrrr");
-		model.addObject("person4", "my name is coolerrrrrrr");
-		
+		for (int i=0; i < 4; i++) {
+			model.addObject(labelarray[i], finalamountforeachperson[i]);
+			System.out.println(finalamountforeachperson[i]);
+		}
 		
 		return model;
 	}

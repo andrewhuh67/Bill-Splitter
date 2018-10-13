@@ -9,7 +9,7 @@
 <body>
 
 	<h1>Bill-Splitter</h1>
-	<h2>If there are less then four people, just leave it blank.</h2>
+	<h2>If there are less then four people, put zero for those people</h2>
 	<h2>${msg}</h2>
 	
 	<form action="/Bill-Splitter/submitBillForm.html" method="POST">

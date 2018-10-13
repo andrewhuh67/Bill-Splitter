@@ -4,19 +4,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Bill-Splitter</title>
 </head>
 <body>
 
 	<h1>Bill-Splitter</h1>
 	<h2>Person 1</h2>
-	<h3>${person1}</h3>
+	<h3>Amount: ${person1}</h3>
 	<h2>Person 2</h2>
-	<h3>${person2}</h3>
+	<h3>Amount: ${person2}</h3>
 	<h2>Person 3</h2>
-	<h3>${person3}</h3>
+	<h3>Amount: ${person3}</h3>
 	<h2>Person 4</h2>
-	<h3>${person4}</h3>
+	<h3>Amount: ${person4}</h3>
 
 </body>
 </html>
