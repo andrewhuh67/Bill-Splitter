@@ -61,7 +61,7 @@ public class BillSplitterController {
 		
 		
 		
-		int total 
+		int total;
 		
 		ModelAndView model = new ModelAndView("BillResults");
 		
