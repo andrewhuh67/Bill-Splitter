@@ -9,46 +9,42 @@
 <body>
 
 	<h1>Bill-Splitter</h1>
+	<h2>If there are less then four people, just leave it blank.</h2>
+	<h2>${msg}</h2>
 	
-	<form action="/Bill-Splitter/submitAdmissionForm.html" method="post">
+	<form action="/Bill-Splitter/submitBillForm.html" method="POST">
 		<p>
-			Person 1 Amount: <input type="text" name="studentName" />
+			Person 1 Amount: <input type="text" name="person1" />
 			
 		</p>
 		
 		<p>
-			Person 2 Amount: <input type="text" name="studentHobby" />
+			Person 2 Amount: <input type="text" name="person2" />
 		</p>
 		
 		<p>
-			Person 3 Amount: <input type="text" name="studentHobby" />
+			Person 3 Amount: <input type="text" name="person3" />
 		</p>
 		
 		<p>
-			Person 4 Amount: <input type="text" name="studentHobby" />
+			Person 4 Amount: <input type="text" name="person4" />
 		</p>
 		
 		<p>
-			Tax: <input type="text" name="studentHobby" />
+			Tax: <input type="text" name="tax" />
 		</p>
 		
 		<p>
-			Delivery Fee: <input type="text" name="studentHobby" />
+			Delivery Fee: <input type="text" name="deliveryfee" />
 		</p>
 		
 		<p>
-			Tip: <input type="text" name="studentHobby" />
+			Tip: <input type="text" name="tip" />
 		</p>
 		<input type="submit" value="Submit Form"/>
 		
 	
 	</form>
-
-
-
-
-
 	
-	<h2>${msg}</h2>
 </body>
 </html>
